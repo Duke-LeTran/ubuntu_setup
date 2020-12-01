@@ -1,0 +1,24 @@
+"
+" Duke's .vimrc file
+" Last Edit : 2020-12-01
+"
+" source : https://github.com/nvie/vimrc/blob/master/vimrc
+" ruler:
+" https://vi.stackexchange.com/questions/356/how-can-i-set-up-a-ruler-at-a-specific-column
+
+" execute pathogen#infect()
+set nocompatible
+" syntax on
+" filetype plugin indent on
+
+" color schemes
+syntax enable
+" set background=dark
+" set background=light
+" colorscheme solarized
+
+set number      " always show row numbers
+set tabstop=4       " a tab is four spaces
+set softtabstop=4
+" set colorcolumn=80
+" highlight ColorColumn ctermbg=0 guibg=lightgrey
