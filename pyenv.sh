@@ -22,4 +22,5 @@ echo 'export PATH="$PATH:$PYENV_ROOT/bin"' >> ~/.bashrc
 # IV. Add pyenv init to shell in .bash_profile
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
 echo 'Double check that your ~/.bash_profile exists and is sourced'
-echo 'Done!
+echo 'Done installing pyenv!'
+exec "$SHELL"
