@@ -50,3 +50,5 @@ sudo apt -y install vim
 sudo apt -y install gnome-tweaks
 sudo apt -y install grub-customizer
 
+# slack
+sudo snap install slack --classic
