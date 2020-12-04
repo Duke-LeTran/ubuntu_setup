@@ -5,10 +5,10 @@ These are the icons in Gnome when you click the lower bottom left of the
 generate your own desktop entries.
 
 Follow some of the examples here in this directory (or copy them directly), and
- place the desktop entries ino /usr/local/share/applications. 
+place the desktop entries into `/usr/local/share/applications`. 
 
 Note, apps that automatically take care desktop entries will place them into
- /usr/share/applications. 
+ `/usr/share/applications`. 
 
 ## More Info
 * [gnome](https://developer.gnome.org/integration-guide/stable/desktop-files.html.en)
