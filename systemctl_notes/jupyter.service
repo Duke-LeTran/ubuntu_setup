@@ -1,0 +1,16 @@
+[Unit]
+Description=Jupyter Notebook
+
+[Service]
+Type=simple
+PIDFile=/run/jupyter.pid
+Environment="PYTHONPATH=/home/daletran/Documents/Projects_local/Scripts/MyPyLib:/home/daletran/Documents/Projects_local/Scripts/ucd-ri-pydbutils"
+ExecStart=/bin/bash -c "/home/daletran/miniconda3/envs/db/bin/jupyter notebook --no-browser --port=8888 --notebook-dir=/home/daletran"
+User=daletran
+Group=daletran
+WorkingDirectory=/home/daletran
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
