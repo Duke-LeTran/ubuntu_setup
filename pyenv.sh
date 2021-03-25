@@ -19,8 +19,10 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 echo '# PYENV' >> ~/.bashrc
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
 echo 'export PATH="$PATH:$PYENV_ROOT/bin"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+echo '##### End PyEnv #####'
 
-# IV. Add pyenv init to shell in .bash_profile
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
+# IV. Add pyenv init to shell in .profile (alternatively .bash_profile)
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.profile
 source ~/.bashrc
 echo 'Done installing pyenv! Type pyenv -v to double check'
