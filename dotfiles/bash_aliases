@@ -1,0 +1,6 @@
+# Duke's aliases
+
+alias mypylib="cd $HOME/$MYPYLIB"
+alias projects="cd $HOME/Documents/Projects_local"
+alias jpt="jupyter notebook --no-browser --port=8888"
+alias li="sudo lsof -i -P -n | grep LISTEN" # check port in use
