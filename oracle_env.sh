@@ -8,8 +8,8 @@ echo '' >> ~/.bashrc # add a new line
 echo '# Oracle Environmental Variables' >> ~/.bashrc
 echo '#----------------------------------' >> ~/.bashrc
 echo 'export ORACLE_BASE="/opt/oracle"' >> ~/.bashrc
-# echo 'export ORACLE_HOME="/opt/oracle/instantclient_19_6"' >> ~/.bashrc
-echo 'export ORACLE_HOME="/opt/oracle/clarity_193000_client_home"' >> ~/.bashrc
+echo 'export ORACLE_HOME="/opt/oracle/instantclient_19_6"' >> ~/.bashrc
+# echo 'export ORACLE_HOME="/opt/oracle/clarity_193000_client_home"' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH="$ORACLE_HOME/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc
 echo 'export TNS_ADMIN="$ORACLE_HOME/network/admin"' >> ~/.bashrc
 echo 'export PATH="$ORACLE_HOME/bin:/opt/bin:$PATH"' >> ~/.bashrc
