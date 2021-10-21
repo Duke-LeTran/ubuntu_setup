@@ -9,9 +9,8 @@ echo '' >> ~/.bashrc # add a new line
 echo '# Oracle Environmental Variables' >> ~/.bashrc
 echo '#----------------------------------' >> ~/.bashrc
 echo 'export ORACLE_BASE="/opt/oracle"' >> ~/.bashrc
-# echo 'export ORACLE_HOME="/opt/oracle/instantclient_19_6"' >> ~/.bashrc
+if # echo 'export ORACLE_HOME="/opt/oracle/instantclient_19_6"' >> ~/.bashrc
 echo 'export ORACLE_HOME="/opt/oracle/clarity_193000_client_home"' >> ~/.bashrc
-
 if [ -f "$ORACLE_HOME/libclntsh.so" ]; then #if instant_client_19_x
 	echo 'export LD_LIBRARY_PATH="$ORACLE_HOME:$LD_LIBRARY_PATH"' >> ~/.bashrc 
 elif [ -f "$ORACLE_HOME/lib/libclntsh.so" ]; then # if full oracle client
