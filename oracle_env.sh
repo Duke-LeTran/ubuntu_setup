@@ -9,16 +9,18 @@ echo '' >> ~/.bashrc # add a new line
 echo '# Oracle Environmental Variables' >> ~/.bashrc
 echo '#----------------------------------' >> ~/.bashrc
 echo 'export ORACLE_BASE="/opt/oracle"' >> ~/.bashrc
-if # echo 'export ORACLE_HOME="/opt/oracle/instantclient_19_6"' >> ~/.bashrc
-echo 'export ORACLE_HOME="/opt/oracle/clarity_193000_client_home"' >> ~/.bashrc
+echo 'export ORACLE_HOME="/opt/oracle/instantclient_19_6"' >> ~/.bashrc
+# echo 'export ORACLE_HOME="/opt/oracle/clarity_193000_client_home"' >> ~/.bashrc
 if [ -f "$ORACLE_HOME/libclntsh.so" ]; then #if instant_client_19_x
 	echo 'export LD_LIBRARY_PATH="$ORACLE_HOME:$LD_LIBRARY_PATH"' >> ~/.bashrc 
 elif [ -f "$ORACLE_HOME/lib/libclntsh.so" ]; then # if full oracle client
 	echo 'export LD_LIBRARY_PATH="$ORACLE_HOME/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc
 else
 	echo "LD_LIBRARY_PATH not found. Please manually set-up this env variable"
+    ls $ORACLE_BASE
 fi
 echo 'export TNS_ADMIN="$ORACLE_HOME/network/admin"' >> ~/.bashrc
 echo 'export PATH="$ORACLE_HOME/bin:/opt/bin:$PATH"' >> ~/.bashrc
 
 echo "Finished install your Oracle environmental variables! Check your .bashrc file to confirm."
+tail ~/.bashrc
