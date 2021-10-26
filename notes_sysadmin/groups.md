@@ -20,9 +20,12 @@ look a bit weird to some sysadmins
 * `vipw` for /etc/passwd
 * `vigr` for /etc/group
 
-# Common commands
+# Add users
+* 'sudo adduser username'
+
+# Common Groups commands
 * ` grep sudo /etc/group` - searchers for 'sudo' in the group file
-* `usermod -a G group1,group2 username`
+* `usermod -aG group1,group2 username` # add username to group1/2
 
 # Other related commands
 * `chgrp -R group .` - adds group to owner of current-dir recursively
