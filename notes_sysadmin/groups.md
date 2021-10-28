@@ -20,10 +20,13 @@ look a bit weird to some sysadmins
 * `vipw` for /etc/passwd
 * `vigr` for /etc/group
 
-# Add users
-* 'sudo adduser username'
+# Users
+* `sudo adduser username`
 
-# Common Groups commands
+# Groups
+*  `groupadd new_group`
+
+## other common group commands
 * ` grep sudo /etc/group` - searchers for 'sudo' in the group file
 * `usermod -aG group1,group2 username` # add username to group1/2
 
