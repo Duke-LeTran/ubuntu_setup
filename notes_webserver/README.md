@@ -33,4 +33,16 @@ conf.d/       httpd.conf  mods-available/  ports.conf     sites-enabled/
 # Links
 * https://www.digitalocean.com/community/tutorials/how-to-configure-the-apache-web-server-on-an-ubuntu-or-debian-vps
 * https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04
-* https://linuxize.com/post/how-to-install-php-on-ubuntu-20-04/#installing-php-74-with-apache
+
+
+# PHP 7.4
+## After upgrading
+
+1. `sudo a2dismod php7.2` it will disable 7.2 version for apache 
+2. Then `sudo a2enmod php7.4` it will enable 7.4 for apache
+3. Then `sudo service apache restart` to restart apache
+
+## Upgrading, follow guides below
+* 18.04 - https://www.digitalocean.com/community/tutorials/how-to-install-php-7-4-and-set-up-a-local-development-environment-on-ubuntu-18-04
+* 20.04 - https://linuxize.com/post/how-to-install-php-on-ubuntu-20-04/#installing-php-74-with-apache
+* https://stackoverflow.com/questions/60539767/php-version-showing-7-2-version-in-phpinfo-php-file-instead-of-php-7-4
