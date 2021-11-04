@@ -10,7 +10,7 @@ set nocompatible
 
 " color schemes
 syntax enable
-" set background=dark
+set background=dark
 " set background=light
 " colorscheme solarized
 
@@ -20,7 +20,7 @@ set tabstop=4 " a tab is four spaces
 set softtabstop=4
 set shiftwidth=4
 
-" set colorcolumn=80
+set colorcolumn=80
 " tabstop:          Width of tab character
 " softtabstop:      Fine tunes the amount of white space to be added
 " shiftwidth        Determines the amount of whitespace to add in normal mode
