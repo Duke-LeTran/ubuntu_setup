@@ -39,7 +39,7 @@ fi
 ## D. MariaDB Oracle Drivers
 ## TO-DO: Download drivers
 # Link etl-common to folder
-ln -s "$HOME/.local/opt/etl-common/etl-template.sh" "$HOME:/.local/bin/etl-template.sh"
+ln -s "$HOME/.local/opt/etl-common/etl-template.sh" "$HOME/.local/bin/etl-template.sh"
 
 ######################################################
 # III. Setup environment variables
