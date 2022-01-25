@@ -1,0 +1,14 @@
+# Notes on logging
+You could put them in `/var/logs` but that's usually just for linux system logs. 
+If you put them in `/var/logs/appname`, then it helps to have a link from 
+`/home/dletran/appname/logs` -> symlink `/var/logs/appname`
+
+# Separate files or a single big one?
+
+# Log maintainence
+If you have a single file, use `logrotate`.
+
+If you have multiple log files, each per run, then creating a cronjob of
+something like this would be effective to delete logs older than 30 days.
+
+`find /path/to/logs/ -type f -mtime +30 -name '*.log' -execdir rm -- '{}' \;`
