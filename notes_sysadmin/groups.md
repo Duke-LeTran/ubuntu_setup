@@ -21,7 +21,8 @@ look a bit weird to some sysadmins
 * `vigr` for /etc/group
 
 # Users
-* `sudo adduser username`
+* `sudo adduser username` # Add users
+* `sudo userdel -r username` # delete users
 
 # Groups
 *  `groupadd new_group`
@@ -38,3 +39,4 @@ look a bit weird to some sysadmins
 * https://unix.stackexchange.com/questions/79176/is-there-any-reason-to-avoid-editing-etc-group-directly
 * https://linuxize.com/post/how-to-create-groups-in-linux/
 * https://linuxize.com/post/how-to-add-user-to-group-in-linux/
+* https://linuxize.com/post/how-to-delete-users-in-linux-using-the-userdel-command/
