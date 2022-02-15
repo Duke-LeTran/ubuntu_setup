@@ -10,7 +10,7 @@
 #####################################################
 # I. Setup local directories
 #####################################################
-mkdir ~/Downloads
+# mkdir ~/Downloads
 mkdir ~/.local
 mkdir ~/.local/bin
 mkdir ~/.local/opt # install pentaho here
