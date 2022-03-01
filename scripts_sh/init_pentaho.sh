@@ -1,16 +1,16 @@
-#!/bin/sh
+
 # This is the setup file for a pentaho service account on a linux server
 # Assumptions
 # This assumes you have 
-# 1. git setup
-# 2. your ssh keys added
-# 3. Pentaho, Java, and db drivers downloaded (unziped) to ~/Downloads
+# 1. git is setup
+# 2. your ssh keys added to your git account
+# 3. Pentaho, Java, and db drivers downloaded (still zipped) to ~/Downloads
 # Future versions will auto-download files to ~/Downloads
 
 #####################################################
 # I. Setup local directories
 #####################################################
-mkdir ~/Downloads
+#mkdir ~/Downloads
 mkdir ~/.local
 mkdir ~/.local/bin
 mkdir ~/.local/opt # install pentaho here
@@ -32,7 +32,7 @@ fi
 if [ -d $HOME/.local/opt/etl-common ]; then
     echo "etl-common already cloned, checked."
 else
-    git clone git@github.com:ucdavis/etl-common.git ~/.local/opt
+    git clone git@github.com:ucdavis/etl-common.git ~/.local/opt/etl-common
 fi
 ## C. Java
 ## TO-DO: Download Java
@@ -60,25 +60,41 @@ echo 'Done installing your pentaho environmental variables'
 # you just download Pentaho, Java, and the drivers and place them in ~/Downloads
 ## A. Pentaho
 FILE=$HOME/Downloads/pdi-ce-*.zip
+PENTAHO=$FILE
 if [ -f $FILE ]; then
     unzip $FILE -d $HOME/.local/opt
     ln -s $HOME/.local/opt/data-integration $HOME/pentaho
+    echo 'Pentaho has been installed at ' $HOME'/.local/opt/data-integration'
     echo ''
 fi
 
 ## B. Java
+#FILE=$HOME/Downloads/jdk-8u251-linux-x64.tar.gz
 FILE=$HOME/Downloads/jdk-8u271-linux-x64.tar.gz
+JAVA=$FILE
 if [ -f $FILE ]; then
     tar -xzvf $FILE -C $HOME/.local/java 
+    echo 'Java has been installed at '$HOME'/.local/java'
     echo ''
 fi
 
 ## C. Oracle and MariaDb Drivers (Pentaho)
 FILE="$HOME/Downloads/oracle and mariadb jdbc drivers for petaho.zip"
+DRIVERS=$FILE
 echo "$FILE"
 if [ -f "$FILE" ]; then
     unzip "$FILE" -d $HOME/.local/opt/data-integration/lib
 fi
+
+## D. Print or log
+echo 'Files used:'
+echo '  * '$JAVA
+echo '  * '$DRIVERS
+echo '  * '$PENTAHO
+echo 'JAVA has been installed at: '$HOME'/.local/java'
+echo 'PENTAHO has been installed at: '$HOME'/.local/opt/data-integration'
+echo 'etl-common has been installed at: '$HOME'/.local/opt/etl-common'
+echo 'Installation complete. Please double check.'
 
 # 1. Download pdi-ce-9.X.X.X-YYY (pentaho)
 # 2. Download java, specifically jdk1.8.0_271
