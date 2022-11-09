@@ -5,3 +5,11 @@ custom `*.service` files, they should likely be placed in `/etc/systemd/system/`
 ## More Info
 * [Digitalocean How-To Use](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
 * [unix.stackexchange](https://unix.stackexchange.com/questions/224992/where-do-i-put-my-systemd-unit-file)
+
+# Searching for services
+
+```
+systemctl list-unit-files --no-pager | grep service-name
+```
+
+https://linuxhint.com/see-all-services-ubuntu/
