@@ -50,6 +50,30 @@ your user account owns .ssh and .ssh/authorized_keys
 * `chmod 0600 ~/.ssh/authorized_keys`
 * `chmod 0700 ~/.ssh`
 
+# V. Example of provisioning new user with access
+## A. Create User
+```
+sudo adduser username
+sudo passwd username # set random pw
+sudo passwd -e username # set to expire upon login
+sudo usermod -aG group1,group2 username
+```
+## B. Setup SSH
+```
+sudo -iu username
+mkdir ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod 0700 ~/.ssh
+chmod 0600 ~/.ssh/authorized_keys
+```
+
+## C. Contact user
+* send user email notifying of login credentials
+    * server:
+    * username:
+    * password:
+* 
+
 # Links
 * https://unix.stackexchange.com/questions/79176/is-there-any-reason-to-avoid-editing-etc-group-directly
 * https://linuxize.com/post/how-to-create-groups-in-linux/
