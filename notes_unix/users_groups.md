@@ -24,9 +24,10 @@ look a bit weird to some sysadmins
 ## A. Add Users
 * `sudo adduser username` # Add users
 
-## B. Delete pw, expire user's pw upon login
+## B. Reset pw, Delete pw, expire user's pw upon login
+* `sudo passwd username` - resets user's password
 * `sudo passwd -d username` - deletes user's current password
-* `sudo passwod -e username` - forces user to update password upon login
+* `sudo passwd -e username` - forces user to update password upon login
 
 ## C. Delete user
 * `sudo userdel -r username` - delete users
