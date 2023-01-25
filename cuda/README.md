@@ -1,6 +1,6 @@
 # Cuda Libraries
 This documentation is still a work in progress as of 2020-12-11. The shell scripts below is for 
-installing latest version of cuda on ubuntu 20.04, see more details from  [here](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=2004&target_type=deblocal).
+installing latest version of cuda on ubuntu 20.04, see more details from  [here](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=2004&target_type=deblocal). More information available [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#verify-you-have-a-cuda-capable-gpu).
 Make sure you're reading the `deb(local)` installation instead of the `*.run`
 Also note, as of 2020-12-11, tensorflow is using cuda architechtures of 7.0
 
