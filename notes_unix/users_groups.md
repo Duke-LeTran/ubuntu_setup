@@ -32,8 +32,10 @@ look a bit weird to some sysadmins
 ## C. Delete user
 * `sudo userdel -r username` - delete users
 
-## D. Add user to group
+## D. Add and delete user to group
 * `usermod -aG group1,group2 username` - add username to group1/2
+* `sudo deluser username group` - removes user from group
+* `sudo -l -U username` - checks if user has been deleted
 
 # III. Groups
 *  `groupadd new_group` - create a new group
