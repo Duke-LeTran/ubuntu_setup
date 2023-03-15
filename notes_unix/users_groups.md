@@ -33,9 +33,12 @@ look a bit weird to some sysadmins
 * `sudo userdel -r username` - delete users
 
 ## D. Add and delete user to group
-* `usermod -aG group1,group2 username` - add username to group1/2
+* `sudo usermod -aG group1,group2 username` - add username to group1/2
 * `sudo deluser username group` - removes user from group
 * `sudo -l -U username` - checks if user has been deleted
+
+### RHEL
+* `sudo usermod -aG wheel username` - adds to sudo for RHEL
 
 # III. Groups
 *  `groupadd new_group` - create a new group
