@@ -23,7 +23,7 @@ look a bit weird to some sysadmins
 # II. Users
 ## A. Add Users
 * `sudo adduser username` # Add users
-
+   
 ## B. Reset pw, Delete pw, expire user's pw upon login
 * `sudo passwd username` - resets user's password
 * `sudo passwd -d username` - deletes user's current password
