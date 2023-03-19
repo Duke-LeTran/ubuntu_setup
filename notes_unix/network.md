@@ -1,0 +1,1 @@
+`sudo netstat -lpn | grep <port_number>` - checks which app is using that port
