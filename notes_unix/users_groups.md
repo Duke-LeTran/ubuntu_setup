@@ -23,6 +23,7 @@ look a bit weird to some sysadmins
 # II. Users
 ## A. Add Users
 * `sudo adduser username` # Add users
+* `sudo adduser --disabled-password dletran` # create user with no password (ssh access only)
    
 ## B. Reset pw, Delete pw, expire user's pw upon login
 * `sudo passwd username` - resets user's password
@@ -79,6 +80,10 @@ chmod 0600 ~/.ssh/authorized_keys
     * password:
 * 
 
+# Other notes
+The difference between `adduser` and `useradd` is that `adduser` is a high-level utility that is more user-friendly and interactive, while `useradd` is a low-level utility that is more suitable for scripting and system use12. Adduser is a Perl script that uses `useradd` in the background, but also performs additional tasks such as creating the home directory, setting the password, and asking for user information13. Useradd is a built-in Linux command that can be found on any Linux system, but it does not create the home directory and password by default, and it requires more options to be specified14.
+
+You can use either `adduser` or `useradd` to create users on Ubuntu, but `adduser` is recommended for most cases because it is easier and more complete. Useradd can be used for scripting or when you need more control over the user creation process. You can also modify the default behavior of both commands by editing the /etc/adduser.conf and /etc/login.defs files4.
 # Links
 * https://unix.stackexchange.com/questions/79176/is-there-any-reason-to-avoid-editing-etc-group-directly
 * https://linuxize.com/post/how-to-create-groups-in-linux/
