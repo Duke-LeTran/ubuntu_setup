@@ -12,7 +12,7 @@ Create the mount folders if necessary:
 * `sudo mkdir /mnt/project_dir`
 
 
-## Credentails
+## Credentials
 Create a credentials file at `~/.config/win/.winauth`
 
 ```
