@@ -1,4 +1,4 @@
-This is for Debian/Ubuntu based servers using CIFS and 
+This is for Debian/Ubuntu based servers using CIFS and Samba.
 
 # Setup
 ## CIFS drivers
@@ -47,6 +47,8 @@ sudo umount /mnt/shared
 
 Let's say you need to mount the shared drive now on a docker container -- just 
 treat it like a regular file path. Use bind mount.
+
+docker-compose.yml:
 
 ```
 services:
