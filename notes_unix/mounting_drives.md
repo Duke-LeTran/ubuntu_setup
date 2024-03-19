@@ -13,7 +13,8 @@ Create the mount folders if necessary:
 
 
 ## Credentials
-Create a credentials file at `~/.config/win/.winauth`. 
+Create a credentials file at `~/.config/win/.winauth`. Make sure you set the
+permissions to `600`.
 
 ```
 username=yourusername
