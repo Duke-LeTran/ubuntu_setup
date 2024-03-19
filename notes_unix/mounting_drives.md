@@ -13,13 +13,19 @@ Create the mount folders if necessary:
 
 
 ## Credentials
-Create a credentials file at `~/.config/win/.winauth`
+Create a credentials file at `~/.config/win/.winauth`. 
 
 ```
 username=yourusername
 password=fakepw123
 domain=HS
 ```
+
+Alternatively, other suggested locations for this file could be:
+
+* `/root/.cifscreds`
+* `/root/.smbcredentials`
+* `/root/.winauth`
 
 ## Mounting
 
@@ -33,10 +39,9 @@ sudo mount -t cifs '//hshome/shared/Path Space/To/Folder' /mnt/project_dir -o cr
 Unmount the drive.
 
 ```
-mount -t cifs //hshome/shared /mnt/shared -o credentials=~/.config/win/.winauth
+sudo umount /mnt/shared
 ```
 
-sudo mount -t cifs '//hshome/shared/Path Space/To/Folder' /mnt/project_dir -o credentials=~/.config/win/.winauth
 
 # References
 * https://unix.stackexchange.com/questions/436178/how-to-use-a-credential-file-when-mounting-a-samba-share-using-mount-command
