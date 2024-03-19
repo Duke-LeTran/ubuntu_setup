@@ -27,7 +27,7 @@ Alternatively, other suggested locations for this file could be:
 * `/root/.smbcredentials`
 * `/root/.winauth`
 
-## Mounting
+# Mounting
 
 Mount the drive. Specifying the version of SMB may be the key.
 
@@ -42,6 +42,18 @@ Unmount the drive.
 sudo umount /mnt/shared
 ```
 
+# Docker
+
+Let's say you need to mount the shared drive now on a docker container -- just 
+treat it like a regular file path. Use bind mount.
+
+```
+services:
+  container_with_mounted_drive:
+    build: ./path_to_DockerFile
+    volumes:
+      - "/mnt/shared/Path Space/To/Folder/:/app/docker_container/shared_folder"
+```
 
 # References
 * https://unix.stackexchange.com/questions/436178/how-to-use-a-credential-file-when-mounting-a-samba-share-using-mount-command
