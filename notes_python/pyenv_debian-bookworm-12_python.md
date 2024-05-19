@@ -7,9 +7,9 @@ So I've learned some things about Debian, and that is it's designed to
 Debian Bookworm doesn't come compatible with the third party python repository typically avaialbe on Ubuntu, ppa/Deadsnakes, which is community managed repository of pre-complied binaries of old versions of python for Ubuntu. Since this repository doesn't exist, it is quite frustrating. 
 
 ## A. Stable: Current Version 3.11.2
-As of writing this Debian's `stable` version of python is `3.11.2`, which is old especially because the official python version for `3.11` is `3.11.9`, which may be available on the `testing`. As a developer, you may need different versions of python, so that tge stable-works-out-the-box python is patently insufficient. This 3.11.2 is therefore the "system" python. Other repositories exist, such as this one from [paravoid](https://people.debian.org/~paravoid/python-all/), but it's very updated, i.e., there is no python 3.9 or 3.10 at all, but there are python 3.11 and 3.8 and lower (weird). You can manually download the tarball and compile from the python website, but a tool to manage this exact process is `pyenv`
+As of writing this Debian's `stable` version of python is `3.11.2`, which is old especially because the official python version for `3.11` is `3.11.9`, which may be available on the `testing`. As a developer, you may need different versions of python, so that tge stable-works-out-the-box python is patently insufficient. This 3.11.2 is therefore the "system" python. Other repositories exist, such as this one from [paravoid](https://people.debian.org/~paravoid/python-all/), but it's not often updated, i.e., there is no python 3.9 or 3.10 at all, but there are python 3.11 and 3.8 and lower (weird). You can manually download the tarball and compile from the python website, but a tool to manage this exact process is `pyenv`
 
-## B. Pyenv 
+## B. pyenv 
 `Pyenv` will the choice to use on Debian, since it was written in bash scripts, but be aware, it may not detect all missing dependencies that it will not detect. You'll have to decipher the error messages, and so for that reason, it is highly recommneded to install using the `-v` flag (i.e., `pyenv install -v 3.10`). Despite these limitations, pyenv does a great job of of automating the pull of the python tarballs, natively compiling the binaries, and providing a efficient method of switching between .
 
 # II. Install
@@ -35,6 +35,7 @@ These were still missing for some reason, so run again if needed:
 sudo apt-get install build-essential zlib1g-dev libffi-dev libssl-dev \
 libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev
 ```
+https://stackoverflow.com/questions/60775172/pyenvs-python-is-missing-bzip2-module
 
 ## Step 3: Install pyenv
 
@@ -69,6 +70,7 @@ Depending on your shell and your environment, so just add them to your `.bashrc`
 > CONFIGURE_OPTS="--enable-optimizations" 
 > pyenv install -v 3.10 # installs the latest version
 ```
+[pyenv: CONFIGURE_OPTS](https://github.com/orgs/pyenv/discussions/1998)
 
 # III. Quickstart: pyenv
 
@@ -147,8 +149,3 @@ No `.python-version` will be generated, but it will temporarily set $PYENV_VERSI
 > echo $PYENV_VERSION
 
 ```
-
-
-# Resources
-* https://stackoverflow.com/questions/60775172/pyenvs-python-is-missing-bzip2-module
-* [pyenv](https://github.com/orgs/pyenv/discussions/1998)
