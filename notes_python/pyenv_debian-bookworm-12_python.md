@@ -41,7 +41,7 @@ https://stackoverflow.com/questions/60775172/pyenvs-python-is-missing-bzip2-modu
 
 ## Step 3: Install pyenv
 
-`sudo apt install -y pyenv`
+`$ curl https://pyenv.run | bash`
 
 You may get a warning message like this: 
 ```
