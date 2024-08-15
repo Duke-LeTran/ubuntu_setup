@@ -108,6 +108,17 @@ it will create a `.python-verison` inside the folder.
 /home/dletran/.pyenv/versions/vproj/bin/python
 ```
 
+### listing all available virtual environments
+```
+dletran in 🌐 Tallac in flask_project on  master [!?] via 🐍 v3.10.14 (flask_proj) 
+❯ pyenv versions
+  system
+  3.8.19
+  3.10.14
+  3.10.14/envs/flask_proj
+* flask_proj --> /home/dletran/.pyenv/versions/3.10.14/envs/flask_proj (set by /home/dletran/Documents/projects/flask_project/.python-version)
+```
+
 ## B. Using pyenv local
 
 Alternatively, you can activate the python versions in the local directory 
