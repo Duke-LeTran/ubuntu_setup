@@ -16,11 +16,14 @@ set background=dark
 
 set expandtab       " spaces instead of tabs
 set number          " always show row numbers
-set tabstop=4 " a tab is four spaces
+set tabstop=4       " a tab is four spaces
 set softtabstop=4
 set shiftwidth=4
-
+set splitright      " using :vsp
+set splitbelow      " using :sp
 set colorcolumn=80
+autocmd FileType python set colorcolumn=72,79
+highlight ColorColumn ctermbg=25 guibg=#005faf
 " tabstop:          Width of tab character
 " softtabstop:      Fine tunes the amount of white space to be added
 " shiftwidth        Determines the amount of whitespace to add in normal mode
