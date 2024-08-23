@@ -4,15 +4,16 @@
 
 So I've learned a couple of things about Debian, and that is it's designed to 
 "just work", hence the philosopy of ["DontBreakDebian"](https://wiki.debian.org/DontBreakDebian).
-Debian Bookworm doesn't have any third party python repositories of other versions of python. Typically available on Ubuntu, there's ppa/Deadsnakes, which is community managed repository of pre-complied binaries of old versions of python specific for Ubuntu. In my search, I did come across a repository of from [paravoid](https://people.debian.org/~paravoid/python-all/), but it's not really maintained... , i.e., there is no python 3.9 or 3.10 at all, but there are python 3.11 and 3.8 and lower (weird). Since this type of reliable repository doesn't exist for Debian, it can be quite frustrating when looking to install different versions of python.
+Debian Bookworm doesn't have any third party python repositories of other versions of python. Typically available on Ubuntu, there's ppa/Deadsnakes, which is community managed repository of pre-complied binaries of old versions of python specific for Ubuntu. In my search, I did come across a repository of from [paravoid](https://people.debian.org/~paravoid/python-all/), but it's not really maintained... , i.e., there is no python 3.9 or 3.10 at all, but there are python 3.11 and 3.8 and lower (weird). Since this type of reliable repository doesn't exist for Debian, it can be quite frustrating when looking to install different version binaries of python,
+coming from this workflow.
 
 ## A. Stable: Current Version 3.11.2
-As of writing this Debian's `stable` version of python is `3.11.2`, which is a little old especially since the official python version for `3.11` is `3.11.9`, which may be available on the `testing`. As a developer, you may need different versions of python, so that the stable-works-out-the-box python is woefully insufficient. This `3.11.2` is, therefore, the "system" python. 
+As of writing this Debian's `stable` version of python is `3.11.2`, which is the "system" python.  The system version is a little old especially since the official python version for `3.11` is `3.11.9`, which may be available on the Debian `testing` repository. But as a developer, you may need different versions of python, so that the stable-works-out-the-box python is woefully insufficient, not to mention lacking of security updates.
 
-The solution then is manually download the tarball from the python website and compile from source. Naturually, a tool built using bash scripts intended to automate this process exists -- enter `pyenv`.
+The solution then is manually download the tarball from the python website and compile from source. Naturually, a tool built using bash scripts intended to automate this process exists -- the `pyenv`: https://github.com/pyenv/pyenv
 
 ## B. pyenv 
-`pyenv` will be my choice to use with Debian, since it actually `wgets` the tarball from the python ftp site and compiles it from source. The tool is written in bash scripts, but be aware, it may not reliably detect all missing dependencies and this can be a real pain. You'll have to decipher the error messages, and so for that reason, it is highly recommneded to install using the `-v` flag (i.e., `pyenv install -v 3.10`). Despite these limitations, pyenv does a great job of of automating the pull of the python tarballs, natively compiling the binaries, and providing a efficient method of switching between versions.
+`pyenv` actually `wgets` the tarball from the python ftp site and compiles it from source. The tool is written in bash scripts, but be aware, it may not reliably detect all missing build dependencies (listed below) and this can be a real pain. You may have to decipher the error messages if coming from a lightweight Debian install, and so for that reason, it is highly recommneded to install using the `-v` flag (i.e., `pyenv install -v 3.10`). Regardless, pyenv does a great job of of automating the downloading of the python tarballs, natively compiling the binaries, and providing a efficient method of managing mutiple versions along with virutal environment support.
 
 # II. Install
 ## Step 1: Install the system python
@@ -21,23 +22,17 @@ The solution then is manually download the tarball from the python website and c
 sudo apt install -y python3 python3-pip python3-venv gcc make python3-tk tk-dev
 ```
 
-## Step 2: Install Dependencies
+## Step 2: Install Build Dependencies
 
-Suggested from realpython:
+Suggested from [RealPython](https://realpython.com/intro-to-pyenv/#build-dependencies):
 ```
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
 libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl
 ```
 
-These were still missing for some reason, so run again if needed: 
-    bzip2 ncurses libffi readline openssl.
-
-```
-sudo apt-get install build-essential zlib1g-dev libffi-dev libssl-dev \
-libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev
-```
-https://stackoverflow.com/questions/60775172/pyenvs-python-is-missing-bzip2-module
+Note, if you are not on Debian/Ubuntu, you may need to check for build deps for
+your specific OS.
 
 ## Step 3: Install pyenv
 
@@ -64,13 +59,13 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
 
-Depending on your shell and your environment, just follow the instructions. For me, I added those lines to my `.bashrc`.
+Depending on your shell and your environment, just follow the instructions. For me, I added those lines to my `~/.bashrc`.
 
 ## Step 4: Install your specific version of python
 
 ```
-> env CONFIGURE_OPTS="--enable-optimizations" 
-> pyenv install -v 3.10 # installs the latest version
+> env CONFIGURE_OPTS="--enable-optimizations" # takes longer but builds a more efficient binary
+> pyenv install -v 3.10 # installs the latest version, i.e., 3.10.14
 ```
 [pyenv: CONFIGURE_OPTS](https://github.com/orgs/pyenv/discussions/1998)
 
